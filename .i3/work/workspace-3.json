@@ -1,0 +1,134 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 1,
+    "type": "con",
+    "nodes": [
+        {
+            // splith split container with 2 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "normal",
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 690,
+                       "width": 1276,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Inbox - rjefts@rfcode.com - Mozilla Thunderbird",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                        "class": "^Thunderbird$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "normal",
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 338,
+                       "width": 562,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Terminal",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                        "class": "^Xfce4\\-terminal$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            // splith split container with 3 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "normal",
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 338,
+                       "width": 562,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Terminal",
+                    "percent": 0.183333333333333,
+                    "swallows": [
+                       {
+                        "class": "^Xfce4\\-terminal$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "normal",
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 338,
+                       "width": 562,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Terminal",
+                    "percent": 0.483333333333333,
+                    "swallows": [
+                       {
+                        "class": "^Xfce4\\-terminal$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+
+{
+    // floating_con with 1 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": null,
+    "type": "floating_con",
+    "nodes": [
+        {
+            "border": "normal",
+            "floating": "user_on",
+            "geometry": {
+               "height": 766,
+               "width": 354,
+               "x": 4075,
+               "y": 76
+            },
+            "name": "Buddy List",
+            "percent": 1,
+            "swallows": [
+               {
+                "class": "^Pidgin$",
+                "window_role": "^buddy_list$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

@@ -1,0 +1,35 @@
+general {
+  colors = true
+  interval = 4
+}
+
+order += "disk /"
+order += "ethernet eth1"
+order += "volume master"
+order += "load"
+order += "tztime local"
+
+ethernet eth1 {
+  # sudo setcap cap_net_admin=ep $(which i3status)
+  format_up = "E: %ip (%speed)"
+  format_down = "E: down"
+}
+
+tztime local {
+  format = "%Y-%m-%d %H:%M:%S"
+}
+
+load {
+  format = "%1min"
+}
+
+disk "/" {
+  format = "%free"
+}
+
+volume master {
+  format = "♪: %volume"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
+}

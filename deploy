@@ -1,0 +1,60 @@
+#!/bin/sh
+
+OVERRIDE="$1"
+
+if [ -z "$1" ]; then
+   echo "Usage: deploy [OVERRIDE]"
+   exit 1
+fi
+
+set -o errexit
+set -o nounset
+
+BASE="$(dirname $0)"
+DST=$HOME
+
+process () {
+   srcdir=$1
+   dstdir="$DST/$srcdir"
+
+   echo "Process: $1"
+
+   if [ ! -d "$dstdir" ]; then
+      echo "Create directory: $dstdir"
+      mkdir -p "$dstdir"
+   fi
+
+   common=$(find "$srcdir" -maxdepth 1 -type f -printf "%f\n")
+   override=""
+   if [ -d "$srcdir/$OVERRIDE" ]; then
+       override=$(find "$srcdir/$OVERRIDE" -maxdepth 1 -type f -printf "%f\n")
+   fi
+
+   for file in $(echo "$common\n$override" | sort | uniq); do
+       cfile="$srcdir/$file"
+       ofile="$srcdir/$OVERRIDE/$file"
+
+       if [ -e "$cfile" ]; then
+           echo "\t  Copy: $file"
+           cp "$cfile" "$dstdir"
+           
+           if [ -e "$ofile" ]; then
+               echo "\tAppend: $file"
+               cat "$ofile" >> "$dstdir/$file"
+           fi
+       elif [ -e "$ofile" ]; then
+           echo "\t  Copy: $file"
+           cp "$ofile" "$dstdir"
+       fi
+   done
+}
+
+cd $BASE
+FIND=$(find . \( -name .git -o -name home -o -name work -o -name deploy \) -prune -o -type d -print | sort) 
+for d in $FIND; do
+   if [ "." != "$d" ]; then
+       process "$d"
+   fi
+done
+
+
