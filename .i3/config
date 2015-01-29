@@ -142,6 +142,7 @@ for_window [class="Firefox"] floating enable
 for_window [class="Google-chrome" title="Developer Tools*"] floating enable
 for_window [class="LibreOffice"] floating enable
 for_window [class="Pidgin"] floating enable
+for_window [class="Vs_exe" title="Clipboards"] floating enable
 for_window [class="Vs_exe" title="Files"] floating enable
 for_window [class="Vs_exe" title="Find and Replace"] floating enable
 for_window [class="Vs_exe" title="Open"] floating enable
