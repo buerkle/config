@@ -1,0 +1,67 @@
+// vim:ts=4:sw=4:et
+{
+    // tabbed split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "tabbed",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "floating": "auto_off",
+            "geometry": {
+               "height": 653,
+               "width": 756,
+               "x": 0,
+               "y": 0
+            },
+            "name": "emacs@westeros",
+            "percent": 0.5,
+            "swallows": [
+               {
+                 "instance": "^emacs$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1037,
+               "width": 636,
+               "x": 640,
+               "y": 41
+            },
+            "name": "config - /home/richie/.i3/config - SlickEdit",
+            "percent": 0.5,
+            "swallows": [
+               {
+                 "class": "^Vs$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "geometry": {
+       "height": 338,
+       "width": 562,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Terminal",
+    "percent": 0.5,
+    "swallows": [
+       {
+         "class": "^Xfce4\\-terminal$"
+       }
+    ],
+    "type": "con"
+}
+
