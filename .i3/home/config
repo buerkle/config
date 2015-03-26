@@ -15,6 +15,10 @@ bar {
     tray_output $leftscreen
 }
 
+bindsym Ctrl+Mod1+Delete exec dm-tool switch-to-greeter
+
+for_window [title="Minecraft*"] floating enable
+
 ################################################################################
 # Autostart
 #
