@@ -4,12 +4,12 @@ general {
 }
 
 order += "disk /"
-order += "ethernet eth1"
+order += "ethernet eth0"
 order += "volume master"
 order += "load"
 order += "tztime local"
 
-ethernet eth1 {
+ethernet eth0 {
   # sudo setcap cap_net_admin=ep $(which i3status)
   format_up = "E: %ip (%speed)"
   format_down = "E: down"

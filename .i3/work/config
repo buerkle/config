@@ -3,10 +3,6 @@
 # WORK
 # 
 
-# screens
-set $leftscreen DVI-I-1
-set $middlescreen DVI-D-0
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -19,7 +15,7 @@ bar {
     font pango: terminus 10
     position top
     status_command i3status
-    tray_output $middlescreen
+    tray_output primary
 }
 ################################################################################
 # Window settings
@@ -30,32 +26,30 @@ assign [class="Thunderbird"] $ws3
 ################################################################################
 # Autostart
 #
-exec --no-startup-id "i3-msg 'workspace $ws2; move workspace to output $leftscreen'"
+exec --no-startup-id "i3-msg 'workspace $ws1'"
+#exec --no-startup-id "i3-msg 'workspace $ws2'"
+#exec --no-startup-id "i3-msg 'workspace $ws3'"
+#exec --no-startup-id "i3-msg 'workspace $ws4'"
 
-exec --no-startup-id "i3-msg 'workspace $ws1; move workspace to output $middlescreen'"
-exec --no-startup-id "i3-msg 'workspace $ws3; move workspace to output $middlescreen'"
-exec --no-startup-id "i3-msg 'workspace $ws4; move workspace to output $middlescreen'"
 
-
-exec --no-startup-id "i3-msg 'workspace $ws1; append_layout /home/richie/.i3/workspace-1.json'"
-exec --no-startup-id "i3-msg 'workspace $ws3; append_layout /home/richie/.i3/workspace-3.json'"
-exec --no-startup-id "i3-msg 'workspace $ws4; append_layout /home/richie/.i3/workspace-4.json'"
+exec --no-startup-id "i3-msg 'workspace $ws1; append_layout ~/.i3/workspace-1.json'"
+#exec --no-startup-id "i3-msg 'workspace $ws3; append_layout ~/.i3/workspace-3.json'"
+#exec --no-startup-id "i3-msg 'workspace $ws4; append_layout ~/.i3/workspace-4.json'"
 
 exec --no-startup-id xbindkeys
 
-exec --no-startup-id thunderbird
-exec --no-startup-id pidgin
+#exec --no-startup-id pidgin
 
-exec --no-startup-id spotify
-exec --no-startup-id banshee
+#exec --no-startup-id spotify
+#exec --no-startup-id banshee
 
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-terminal --title curl
-exec --no-startup-id xfce4-terminal --title nextgen
-exec --no-startup-id xfce4-terminal --title nextgen-src
+exec --no-startup-id xfce4-terminal --title build
+exec --no-startup-id xfce4-terminal --title src
 exec --no-startup-id xfce4-terminal --title psql
 exec --no-startup-id vs
 
 exec "i3-msg workspace $ws1"
-exec --no-startup-id google-chrome
+exec --no-startup-id google-chrome --touch-devices=123
 

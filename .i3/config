@@ -59,31 +59,19 @@ bindsym $Alt+F4 kill
 bindsym $Alt+F2 exec dmenu_run
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+t focus down
-bindsym $mod+n focus up
-bindsym $mod+s focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+t move down
-bindsym $mod+Shift+n move up
-bindsym $mod+Shift+s move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+d split h
+bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -164,8 +152,10 @@ client.urgent                   #cl0004 #900000 #ffffff #900000
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus [class="Xfce4-terminal"] scratchpad show
 
-bindsym $mod+b [class="Google-chrome"] scratchpad show
+#bindsym $mod+b [class="Google-chrome"] scratchpad show
 bindsym $mod+c [class="Pidgin"] scratchpad show
+bindsym $mod+b [class="HipChat"] scratchpad show
+
 
 ################################################################################
 # Window settings
@@ -177,6 +167,7 @@ assign [class="Spotify"] $ws4
 for_window [class="Evince"] floating enable
 for_window [class="Firefox"] floating enable
 for_window [class="Google-chrome" title="Developer Tools*"] floating enable
+for_window [class="HipChat"] floating enable
 for_window [class="LibreOffice"] floating enable
 for_window [class="Pidgin"] floating enable
 for_window [class="Vs" title="Clipboards"] floating enable
