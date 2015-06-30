@@ -150,6 +150,7 @@ client.urgent                   #cl0004 #900000 #ffffff #900000
 ################################################################################
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+Return scratchpad show
 bindsym $mod+minus [class="Xfce4-terminal"] scratchpad show
 
 #bindsym $mod+b [class="Google-chrome"] scratchpad show
@@ -181,4 +182,3 @@ for_window [class="Vs_exe" title="Open"] floating enable
 for_window [class="Steam"] floating enable
 for_window [title="Task Manager - Google Chrome"] floating enable
 for_window [class="Thunderbird" window_role="messageWindow"] floating enable
-
