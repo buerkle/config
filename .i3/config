@@ -167,7 +167,7 @@ assign [class="Spotify"] $ws4
 
 for_window [class="Evince"] floating enable
 for_window [class="Firefox"] floating enable
-for_window [class="Google-chrome" title="Developer Tools*"] floating enable
+for_window [class="Google-chrome" window_role="pop-up"] floating enable
 for_window [class="HipChat"] floating enable
 for_window [class="LibreOffice"] floating enable
 for_window [class="Pidgin"] floating enable
