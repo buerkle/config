@@ -137,7 +137,7 @@ bindsym $mod+r mode "resize"
 # Volume adjustment
 #
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -- -5% && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5% && killall -SIGUSR1 i3status
 bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle && killall -SIGUSR1 i3status
 
 # Window Colors
